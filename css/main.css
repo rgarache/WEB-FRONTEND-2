@@ -1,0 +1,27 @@
+header,
+main,
+footer {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-size: 30px;
+    margin: 20px;
+}
+ol {
+    padding-left: 100px;
+}
+
+header,
+footer {
+    background-color: #863ee6;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    
+}
+
+footer a {
+    color: white;
+}
