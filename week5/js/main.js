@@ -78,6 +78,7 @@ const view = {
     info: document.getElementById('info'),
     start: document.getElementById('start'),
     response: document.querySelector('#response'),
+    timer: document.querySelector('#timer strong'),
     
     render(target,content,attributes) {
         for(const key in attributes) {
@@ -119,13 +120,18 @@ const view = {
 
 const game = {
         start(quiz){
+        console.log('start() invoked');
         this.score = 0;
         this.questions = [...quiz];
         view.setup();
         this.ask();
+        
+        this.secondsRemaining = 20;
+        this.timer = setInterval( this.countdown , 1000 );
     },
     
     ask(name){
+        console.log('ask() invoked');
         if(this.questions.length > 0) {
             this.question = this.questions.pop();
             const question = `What is ${this.question.name}'s real name?`;
@@ -137,6 +143,7 @@ const game = {
     },
 
     check(event){
+        console.log('check(event) invoked');
         event.preventDefault();
         const response = view.response.answer.value;
         const answer = this.question.realName;
@@ -151,9 +158,19 @@ const game = {
         this.ask();
     },
 
+    countdown() {
+    game.secondsRemaining--;
+    view.render(view.timer,game.secondsRemaining);
+    if(game.secondsRemaining < 0) {
+        game.gameOver();
+        }
+    },
+
     gameOver(){
+        console.log('gameOver() invoked');
         view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
         view.teardown();
+        clearInterval(this.timer);
     }
 }
 
