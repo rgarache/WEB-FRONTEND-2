@@ -29,7 +29,9 @@ const links = [{
     {label: "week8",
     url: "week8/index.html"},
     {label: "week9",
-    url: "week9/index.html"}
+    url: "week9/index.html"},
+    {label: "week10",
+    url: "wekk10/index.html"}
 ]
 
 function inner() {
