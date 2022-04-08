@@ -44,7 +44,7 @@ const menu = [
     id: 6,
     title: "Tres Leches",
     category: "shakes",
-    price: 18.99,
+    price: 2.35,
     img: "./image/item-6.jpg",
     desc: `Delicious typical Nicaraguan dessert whose name is due to its 3 dairy ingredients.`,
   },
@@ -60,7 +60,7 @@ const menu = [
     id: 8,
     title: "Carne Tapada",
     category: "lunch",
-    price: 12.99,
+    price: 8.75,
     img: "./image/item-8.jpg",
     desc: `Carne tapada is the name of this special meat and vegetable stew that goes very well with tortillas and rice.`,
   },
@@ -68,7 +68,7 @@ const menu = [
     id: 9,
     title: "Buñuelos dulces de maíz",
     category: "shakes",
-    price: 16.99,
+    price: 2.00,
     img: "./image/item-9.jpg",
     desc: `They are made with a dough of corn mixed with cheese and bathed in a syrup made with rapadura (piloncillo), cinnamon and other spices. Calientitos are more flavorful and some recipes substitute corn with yucca.`,
   },
@@ -76,7 +76,7 @@ const menu = [
     id: 10,
     title: "Churrasco con chimichurri",
     category: "dinner",
-    price: 22.99,
+    price: 10.00,
     img: "./image/item-10.jpg",
     desc: `Understood as a cut of any type of grilled meat, it is a typical food of many Latin American countries such as Argentina, Brazil, Chile, Uruguay, Bolivia, Venezuela, Mexico and Nicaragua.`,
   },
@@ -92,7 +92,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 function diplayMenuItems(menuItems) {
   let displayMenu = menuItems.map(function (item) {
-    // console.log(item);
+    
 
     return `<article class="menu-item">
           <img src=${item.img} alt=${item.title} class="photo" />
